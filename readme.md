@@ -22,10 +22,10 @@ There are two main parts to the lab sessions:
 
 The code runs on Python, there are three ways you can proceed with the installation:
 1. Install docker and use the provided docker compose configuration.
-2. Install Python with mamba/conda and install the provided environment.txt file.
+2. Install Python with mamba/conda and install the provided environment.txt files.
 3. Install Python and install the required packages manually (not recommended).
 
-The instructions are detailed in installation.md.
+The instructions are detailed in [installation.md](installation.md).
 
 ## Exercises
 
@@ -39,5 +39,6 @@ To be announced.
 
 ## Issues
 
-If you encounter any issues, feel free to open an issue in the repository or contact
-us through Canvas.
+If you encounter any issues, feel free to
+[open an issue](https://github.com/npielawski/llm-mushroom-chatbot/issues) in the
+repository or contact us through Canvas.

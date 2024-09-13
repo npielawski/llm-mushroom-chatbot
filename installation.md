@@ -22,7 +22,8 @@ this document. This option is specific to the Huggingface API, as the Gemini API
 the computation on the server side.
 
 The folder contains the boilerplate code, exercises and data files to test the chatbot.
-There is an visual description of the data files in the `transcript.txt` file.
+There is an visual description of the data files in the [transcript.txt](transcript.txt)
+file.
 
 ## Using docker
 
@@ -82,7 +83,7 @@ file.
 
 ### Updating the docker image
 
-If you make any changes to the `Dockerfile` or the `requirements.txt` file, you will
+If you make any changes to the `Dockerfile` or the `requirements.txt` files, you will
 need to rebuild the docker image. You can do this by running the following command:
 
 ```bash
