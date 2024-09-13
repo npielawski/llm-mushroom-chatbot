@@ -1,0 +1,88 @@
+chain_of_thought_prompting.pdf:
+    This is a PDF file containing a scientific article about the effects of chain of
+    thought prompting on reasoning. The title of the article is "Chain-of-Thought
+    Prompting Elicits Reasoning in Large Language Models". The authors hypothesize that
+    letting the model generate a chain of thoughts can help it reason better and
+    achieve better accuracy on various benchmarks.
+
+engineer_fitting_prosthetic_arm.jpg:
+    This is a picture of an engineer fitting a prosthetic arm on a quadruple amputee.
+    Both person are sitting in a white, bare room. The engineer is dressed in black
+    clothes in front of a laptop, and adjusts an armband on the amputee's right arm. The
+    amputee is sitting on a wheel chair, wearing a blue shirt and beige shorts. The
+    amputee is also wearing two carbon fiber prosthetic arms, only one features a hand.
+
+license.txt:
+    This document contains the license information for the files in this directory.
+
+mushroom_copper_spike.jpg:
+    A picture of two copper spike mushrooms growing in the forest. They are brown and
+    shiny. They are considered mediocre edible mushrooms.
+
+mushroom_deadly_webcap.jpg:
+    A picture of five deadly webcap mushrooms growing in the forest. They are orange
+    colors with brown snake-like patterns on the stipe. They are absolutely deadly as
+    they contain the toxin orellanine, which causes acute kidney failure. There is no
+    known antidote.
+
+mushroom_false_chanterelle.jpg:
+    A picture of three false chanterelle mushroom growing in the forest. They are yellow
+    and have gills. They are considered inedible as they can cause stomach upset in some
+    people. They are often mistaken for the edible chanterelle, but the chanterelles
+    have ridges instead of gills, are firmer, and have a distinctive smell.
+
+mushroom_parasol_topview.jpg
+    A picture of a false parasol mushroom growing on grass. The picture is taken from
+    above, so the stipe is not visible. The mushroom is white with brown scales on the
+    cap. This mushroom is edible but has variants that can cause stomach upset, like
+    the false parasol. The false parasol has a bare, white stipe, while the parasol
+    features a distinct pattern on the stipe. This image cannot be classified accurately
+    as the stipe is not visible.
+
+nya_svampboken_p226.jpg:
+    This is a picture of a page from the book "Nya Svampboken" by Pelle Holmberg and
+    Hans Marklund, p. 226. The page is written in Swedish and describes the deadly
+    webcap mushroom.
+    Transcript:
+    ✝ Toppig giftspindling Cortinarius rubellus (syn. C. speciosissimus)
+    Spindlingarna (spindelskivlingarna) utgör en mycket stor del av stor-
+    svamparna i en svensk skog. I tidigare svampböcker finns flear mat-
+    svampar upptagna bland dessa, men idag avråder vi från att äta spind-
+    lingar. Två av de farligaste giftsvamparna vi har i vårt land hör till detta
+    släkte, nämligen toppig giftspindling och orangebrun giftspindling
+    (s. 230).
+
+    Gift, symptom och behandling
+    Dessa spindlingar innehåller giftet orellanin som har en specifik njur-
+    skadande effekt.* Det otäcka med dessa giftsvampar är att tidiga för-
+    giftningssymptom saknas eller är mycket svaga. Det är först efter 3 till 7,
+    i vissa fall upp till 14, dygn, som påtagliga symptom visar sig - intensiv
+    törst, trötthet, njursmärtor och först ökande, sedan upphörande urin-
+    produktion - och då har den förgiftade ofta fått svåra njurskador. Be-
+    handlingen i detta skede innebär dialys och i svåra fall njurtransplantation.
+
+    Viktiga kännetecken på toppig giftspindling
+    • Hatten är matt, liksom filthårig, rödbrun till gulbrun. Hatten är ibland
+      toppig men den kan också vara välvd eller till och med tillplattad på
+      mitten.
+    • De rödbruna skivorna under hatten är tjocka, höga och tämligen glesa.
+    • Runt den bruna foten finns gula, oregelbundna band.
+
+    [Transcription note: The next part is written in the margin]
+    * Beträffande övriga
+    spindlingar, som i olika
+    sammanhang ofta
+    anges vara giftiga,
+    finns det ännu inga
+    vetenskapliga belägg
+    för att de skulle inne-
+    hålla något farligt gift,
+    som t.ex. orellanin. Det
+    gäller t.ex. gulbandad
+    spindling (Cortinarius
+    gentilis), eldspindling
+    (C. limonius), lokspind-
+    ling (C. callisteus) och
+    svavelspindling (C.
+    meinhardii, se äv. s. 121).
+

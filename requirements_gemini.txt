@@ -1,0 +1,4 @@
+google-generativeai==0.7.2
+gradio==4.43.0
+ipywidgets==8.1.5
+pdfminer.six==20240706
