@@ -64,9 +64,9 @@ docker compose exec jupyter <command>
 ```
 
 You can replace `<command>` with any command you want to run on the container. For
-instance `bash` will start a bash shell on the container, `python3 demo.py` will run the
-`demo.py` file on the container, and `jupyter notebook list` will list the running
-Jupyter notebooks.
+instance `bash` will start a bash shell on the container,
+`python3 part_2_mushroom_chatbot.py` will run the `part_2_mushroom_chatbot.py` file on
+the container.
 
 ### Running gradio in development mode
 
@@ -74,12 +74,12 @@ If you want to run the gradio server in development mode, you can run the follow
 command:
 
 ```bash
-docker compose exec jupyter gradio demo.py
+docker compose exec jupyter gradio part_2_mushroom_chatbot.py
 ```
 
 This will start the gradio server and you can access it at `http://localhost:7860`. The
-server will automatically reload when you make changes to the code in the `demo.py`
-file.
+server will automatically reload when you make changes to the code in the
+`part_2_mushroom_chatbot.py` file.
 
 ### Updating the docker image
 
