@@ -33,6 +33,9 @@ Complete one of the notebooks depending on the path you choose in Part 1. The no
 have exercises that you can complete to get a better understanding of the API and the
 models. They give you a good starting point for building the chatbot in Part 2.
 
+In part 1, make sure to complete the exercises in the notebook before moving to part 2.
+Record the output of the exercises in the notebook, as well as in part 2.
+
 ### Part 1.a.: Using the Gemini API
 
 The notebook `part_1a_gemini.ipynb` contains all the exercises for the Gemini API. Just
@@ -40,13 +43,24 @@ start a Jupyter notebook server and open the notebook to start working on the ex
 
 ### Part 1.b.: Using the Huggingface API
 
-To be announced.
+The notebook `part_1b_huggingface.ipynb` contains all the exercises for the Huggingface
+API. Just start a Jupyter notebook server and open the notebook to start working on the
+exercises.
 
 ### Part 2: Building a Chatbot
 
 The python file `part_2_mushroom_chatbot.py` contains boilerplate code for building the
 mushroom chatbot using Gradio. The code contains the instructions for the exercises you
 need to complete to build the chatbot in the form of comments.
+
+The goal of the chatbot is to be able to answer questions about mushrooms and process
+images of mushrooms. The chatbot should be able to provide information about images of
+mushrooms and answer questions about them.
+
+Write a report (in any format you like) that contains the answers to the questions in
+`Things to check` and the code for the exercises in `Main exercises`. The report should
+also contain examples of the chatbot responses for the exercises. Submit the report
+through Canvas.
 
 #### Main exercises:
  1. Add the Gemini chatbot to the interface.
@@ -102,12 +116,14 @@ need to complete to build the chatbot in the form of comments.
     JSON response?
  6. Can you check the quality of the chatbot's answers? How would you do that? Try
     the mushroom_*.jpg images in the `data` folder with various models of various
-    complexities. What are the results? What are the limitations of your approach?
+    complexities. What are the results? What are the limitations of a mushroom expert
+    chatbot?
  7. The Amanita Muscaria (the red mushroom with white dots) is a famous mushroom. It
-    contains a neurotoxin that can cause delirium, but it is generally not deadly.
-    It can be eaten if prepared correctly. Can you find a way to make the chatbot
-    provide this information? How can you make sure that the chatbot does not provide
-    this information to someone who would eat the mushroom without proper preparation?
+    contains a neurotoxin that can cause delirium among other symptoms, but it is
+    generally not deadly. It can be eaten if prepared correctly. Can you find a way to
+    make the chatbot provide this information? Now, how can you make sure that the
+    chatbot does not provide this information to someone who would eat the mushroom
+    without proper preparation?
  7. Can you find a way to make the chatbot more engaging? How would you do that?
 
 #### Optional exercises:
