@@ -1,0 +1,268 @@
+---
+title: "Make your own chatbot!"
+subtitle: "1RT730 course"
+author: "Nicolas Pielawski"
+institute: "Uppsala University"
+date: "2024-09-16"
+date-format: "full"
+format:
+    beamer:
+        dpi: 300
+        aspectratio: 1610
+        theme: "metropolis"
+        fontsize: 17pt
+classoption: "presentation"
+toc: true
+header-includes:
+- \logo{\ifnum\thepage>1\includegraphics[width=1cm]{assets/logo_uu.png}\fi}
+incremental: true
+---
+
+# Basics of chatbots
+
+## What is a chatbot?
+
+* A chatbot is a software that can simulate a conversation with a user in natural
+  language.
+* **Not** an LLM (Large Language Model) but a system that can understand and generate
+  text.
+* Multiple parts:
+  + A user interface (text, voice, etc.),
+  + A set of models to understand the user input,
+  + APIs to interact with external services, e.g. databases, APIs, ...
+* Is it an important distinction?
+  + No.
+
+## How to build a chatbot?
+
+* We need a:
+  - User interface (gradio),
+  - Model to understand the user input (tokenizer),
+  - Model to generate the response (LLM),
+  - A server which serves the models (torchserve, Gemini API, ...)
+
+## What can a LLM do?
+
+* Generate text based on **any** context:
+  - Text, conversation, code, tables, etc.
+* What is the best context for your task?
+* Semantic translation:
+  - From text to SQL queries,
+  - From a UI picture to a code snippet,
+  - From a recipe to a poem by Karin Boye.
+* Can your task be framed as semantic translation?
+
+## What can a LLM not do?
+
+* Limited to the training data:
+  - Interpolation is great, extrapolation is **very risky**.
+* Give objective answers
+* No guarantees on the quality of the output:
+  - hallucinations, biases, etc.
+
+## What is important? The user experience!
+
+* Examples:
+  - ChatGPT went from text completion to chatbot
+    + Fine-tuned on conversational data and RLHF
+  - Github Copilot suggests code completions
+    + Can document, fix, debug, write commit messages, etc.
+  - Photoshop with segmentation tools
+    + Can select people, faces, eyes, teeth, etc.
+* Focus on what is important for the user
+* How to maximize the user benefiting from the chatbot?
+
+## Think in workflows and user stories
+
+* Example:
+  1. Ask the chatbot to generate code to solve a task
+  2. Run the code
+  3. If the code fails to run, go back to step 1
+  4. If the code runs, ask the chatbot to explain the result
+* You can branch the workflow and let the chatbot only remember the important parts
+
+# Demo
+
+## The mushroom expert
+
+* A chatbot that can identify mushrooms
+* User interface: text and image
+* Can tell you fun facts about the mushrooms
+* Generates JSON output for images
+* Can write transcripts about mushroom books
+
+## Demo
+
+* **[Mushroom expert link](http://0.0.0.0:7860/)**
+
+## Example of conversation (1/2)
+
+1. *User sent picture of deadly webcap mushroom*
+2. **LLM:** The image shows three honey brown Honey mushrooms (Armilaria) with visible
+   caps, stipes and gills, which are edible.
+3. **User:** Could they be deadly mushrooms?
+4. **LLM:** No, the mushrooms in the image are not deadly. They are Honey mushrooms
+   (Armillaria) which are edible and commonly found in Sweden.
+
+## Example of conversation (2/2)
+
+5. **User:** They are deadly webcaps.
+6. **LLM:** You are correct! I apologize for the mistake. The mushrooms in the image are
+   indeed deadly webcaps (Cortinarius rubellus) which are highly poisonous and should
+   never be consumed. They are often mistaken for edible mushrooms, so it is crucial to
+   be absolutely certain of the identification before consuming any wild mushrooms.
+
+# Challenges of chatbots
+
+## Prompt ambiguity
+
+* How to ask the chatbot to generate a code snippet?
+  - "Generate a code snippet to solve the task"
+  - "Write a code snippet to solve the task"
+  - "Can you provide a code snippet to solve the task"
+* What constraints should be added?
+  - "Use Python"
+  - "Do not explain the code"
+  - "Do not write anything else than the code even if the user asks for it"
+  - "I'll tip you 2,000 SEK if you..."
+
+## What instructions for the Mushroom expert?
+
+* What base instructions for the LLM?
+  - Act as a mushroom expert
+  - You are talking to a beginner? interested in mushrooms? a chef?
+  - The users are (not?) at risk of poisoning?
+  - We are in Sweden.
+  - Do not make small talk.
+  - Only talk about mushrooms.
+
+## Inconsistency
+
+* How to handle different responses for the same input?
+  - Set the temperature of the LLM to 0.0
+  - Use a deterministic model (set the seed)
+* Does it solve the problem?
+  - No.
+* Why?
+
+## Computational cost
+
+* LLMS are expensive to train and to run
+* Multimodal LLMs are even more expensive
+* How to reduce the cost?
+  - Use a smaller model
+  - Use a more efficient model
+  - Use a model that can be pruned/quantized/distilled
+
+## Latency
+
+* Takes time to generate the response (seconds)
+* Small prompts can be generated quickly
+* Complexity is squared with the length of the prompt
+* Discard parts of prompts that are not useful
+* Stream the response to the user (UX)
+
+## Privacy
+
+* Training data can contain sensitive information
+* The model can leak sensitive information to API calls
+* The model can be used to infer sensitive information
+* Some models can memorize sensitive information
+
+## Security
+Can the chatbot be used to exploit the system? (**[OWASP](https://owasp.org/www-project-top-10-for-large-language-model-applications/)**)
+
+:::: {.columns .nonincremental}
+
+::: {.column width="50%"}
+1. Prompt injection
+2. Insecure output handling
+3. Model DoS
+4. Supply chain vulnerabilities
+5. Vulnerable chain vulnerabilities
+:::
+
+::: {.column width="50%"}
+6. Sensitive information disclosure
+7. Insecure plugin design
+8. Excessive agency
+9. Overreliance
+10. Model theft
+:::
+
+::::
+
+# There is no multimodal LLM
+
+## What is multimodal?
+
+* Multiple modalities: text, images, audio, etc.
+* Purpose:
+  - Combine information from different sources
+  - Improve the understanding of the context
+
+## How to combine modalities?
+
+* One captioning model for each modality
+  - Contains a modality encoder
+  - Contains a modality interface
+* Goal is to translate the input modality to text
+* For images, multiple captions can be generated and given to the LLM with special tags.
+
+# Lab session
+
+## Overview
+
+* Two parts:
+  - Part 1: Learn to work with an LLM
+  - Part 2: Create a mushroom expert chatbot with Gradio
+* For part 1, two paths:
+  - Path a: Use the cloud-based API of Gemini
+  - Path b: Use the local API of Hugging Face
+
+## Docker
+
+* Easiest way to get started with the lab session
+* Creates a container with all the dependencies
+* Everyone will have the same environment
+* Can be used for both paths
+* Other options are with conda or pip
+
+## Docker usage
+
+### Starting a jupyter notebook
+```bash
+docker compose up
+```
+
+### Starting a gradio server
+```bash
+docker compose exec jupyter gradio code.py
+```
+
+## Gradio
+
+:::: {.nonincremental}
+* Tool to create user interfaces for machine learning models
+* **[Documentation](https://www.gradio.app/docs/gradio/chatinterface)**
+* **[Playground with examples](https://www.gradio.app/playground)**
+::::
+
+## Gemini
+
+:::: {.nonincremental}
+* **[Documentation](https://ai.google.dev/api?lang=python)**
+* **[Models](https://ai.google.dev/gemini-api/docs/models/gemini)**
+* **[Github python client](https://github.com/google-gemini/generative-ai-python/tree/main)**
+* **[Gemini cookbook (examples and guides)](https://github.com/google-gemini/cookbook)**
+::::
+
+## Hugging Face
+
+:::: {.nonincremental}
+* **[Documentation](https://huggingface.co/transformers/)**
+* **[Models](https://huggingface.co/models)**
+* **[Conversation tutorial](https://huggingface.co/docs/transformers/conversations)**
+::::
+
+# Questions
