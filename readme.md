@@ -1,6 +1,6 @@
-# LLM and Societal Consequences of AI - Lab
+# LLM and Societal Consequences of AI - Lab and Assignment
 
-This repository contains the boilerplate code and exercises of the lab session of the
+This repository contains the boilerplate code and exercises of the lab and assignement of the
 course "Large Language Models and Societal Consequences of Artificial Intelligence"
 (1RT730) at the University of Uppsala.
 
@@ -13,9 +13,13 @@ cloud.
 
 There are two main parts to the lab sessions:
 1. Getting acquainted with the AI models API, it has two path (choose one):
+
    a. Using Google's Gemini API in the cloud (recommended).
+
    b. Using the Huggingface API on your machine (requires a decent hardware setup).
-2. Building a chatbot using the results from the previous step. The chatbot is a
+
+Using the knowledge gained through the lab exercises you will then complete the assignment: 
+* Building a chatbot using the results from the previous step. The chatbot is a
    mushroom expert that can answer questions about mushrooms, and work with images.
 
 ## Installation
@@ -27,14 +31,13 @@ The code runs on Python, there are three ways you can proceed with the installat
 
 The instructions are detailed in [installation.md](installation.md).
 
-## Exercises
+## Lab Exercises
 
-Complete one of the notebooks depending on the path you choose in Part 1. The notebooks
+Complete one of the notebooks depending on the path you choose. The notebooks
 have exercises that you can complete to get a better understanding of the API and the
-models. They give you a good starting point for building the chatbot in Part 2.
+models. They give you a good starting point for building the chatbot for the assignment.
 
-In part 1, make sure to complete the exercises in the notebook before moving to part 2.
-Record the output of the exercises in the notebook, as well as in part 2.
+It is advised to complete the exercises of the lab before moving to the assignment.
 
 ### Part 1.a.: Using the Gemini API
 
@@ -47,7 +50,9 @@ The notebook `part_1b_huggingface.ipynb` contains all the exercises for the Hugg
 API. Just start a Jupyter notebook server and open the notebook to start working on the
 exercises.
 
-### Part 2: Building a Chatbot
+## Assignment: Building a Mushroom Chatbot
+After the completion of the Lab, you are welcome to start working on the assignment. 
+Here, you will be developing the mushroom chatbot presented during the lab seminar.
 
 The python file `part_2_mushroom_chatbot.py` contains boilerplate code for building the
 mushroom chatbot using Gradio. The code contains the instructions for the exercises you
@@ -59,17 +64,17 @@ mushrooms and answer questions about them.
 
 Write a report (in any format you like) that contains the answers to the questions in
 `Things to check` and the code for the exercises in `Main exercises`. The report should
-also contain examples of the chatbot responses for the exercises. Submit the report
-through Canvas.
+also contain examples of the chatbot responses for the exercises. Submit the report, alongside your code,
+through [Canvas](https://uppsala.instructure.com/courses/94786/assignments/280275).
 
 #### Main exercises:
- 1. Add the Gemini chatbot to the interface.
+ 1. Add the Gemini (or HuggingFace) chatbot to the interface.
  2. Make the chatbot multimodal so that it can read mushroom images.
  3. Add instructions to the chatbot, so that it behaves like a mushroom expert, and
     that it stirs the conversation in the right direction (i.e. mushrooms related).
  4. Stream the answers and display the chunks of text as they are being processed.
- 5. Print a message when the chatbot's safety filter is triggered.
- 6. If the streaming fails, it is not possible to keep the conversation going. Add
+ 5. (Gemini only) Print a message when the chatbot's safety filter is triggered.
+ 6. (Gemini only) If the streaming fails, it is not possible to keep the conversation going. Add
     a try catch block to handle this situation (tip: use the rewind function for
     Gemini).
  7. When the chatbot receives an image, ask it to produce a JSON response with the
@@ -135,8 +140,7 @@ through Canvas.
 
 Some of the exercises are more challenging than others and a few even do not have a
 clear solution. The evaluation will be based on the quality of the implementation, the
-understanding of the concepts, and the creativity of the assessment in `Things to check`
-.
+understanding of the concepts, and the creativity of the assessment in `Things to check`.
 
 ## Issues
 
